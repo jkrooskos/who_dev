@@ -64,7 +64,6 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware',
     ],
     keywords='web application server wsgi repoze repoze.who',
-    author='Marco Martinez',
     url='https://github.com/m-martinez/who_dev',
     license='BSD-derived (http://www.repoze.org/LICENSE.txt)',
     include_package_data=True,
