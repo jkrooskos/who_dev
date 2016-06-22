@@ -1,11 +1,3 @@
-include MANIFEST.in
-
-include README.rst
-include CHANGES.rst
-
-include CONTRIBUTORS
-include COPYRIGHT
-include LICENSE
-include VERSION
-
+include *.rst
+include CONTRIBUTORS LICENSE
 global-exclude *~ *.pyc

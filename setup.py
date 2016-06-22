@@ -10,48 +10,18 @@ CHANGELOG = open(os.path.join(HERE, 'CHANGES.rst')).read()
 
 
 REQUIRES = [
-    'repoze.who>=2.0',
+    'repoze.who>=2.3'
 ]
 
 
-EXTRAS = {
-    'test': ['pytest', 'pytest-cov']
-}
-
-
-def get_version():
-    version_file = os.path.join(HERE, 'VERSION')
-
-    # read fallback file
-    try:
-        with open(version_file, 'r+') as fp:
-            version_txt = fp.read().strip()
-    except:
-        version_txt = None
-
-    # read git version (if available)
-    try:
-        version_git = (
-            Popen(['git', 'describe'], stdout=PIPE, stderr=PIPE, cwd=HERE)
-            .communicate()[0]
-            .strip()
-            .decode(sys.getdefaultencoding()))
-    except:
-        version_git = None
-
-    version = version_git or version_txt or '0.0.0'
-
-    # update fallback file if necessary
-    if version != version_txt:
-        with open(version_file, 'w') as fp:
-            fp.write(version)
-
-    return version
-
+TESTS_REQUIRE = [
+    'pytest',
+    'pytest-cov'
+]
 
 setup(
     name='who_dev',
-    version=get_version(),
+    version='0.0.2',
     description='A developer-mode plugin for repoze.who',
     long_description='\n\n'.join([README, CHANGELOG]),
     classifiers=[
@@ -70,6 +40,6 @@ setup(
     packages=find_packages(),
     zip_safe=False,
     install_requires=REQUIRES,
-    extras_require=EXTRAS,
-    tests_require=EXTRAS['test'],
+    extras_require={'develop': TESTS_REQUIRE},
+    tests_require=TESTS_REQUIRE,
 )

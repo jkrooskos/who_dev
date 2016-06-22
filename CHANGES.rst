@@ -1,8 +1,14 @@
 Changelog
 =========
 
-0.0.0 (2015-10-19)
+0.0.2 (2016-06-22)
 ------------------
 
-The initial release.
+* Converted to actual module so setup.py packages correctly
+
+
+0.0.1 (2015-10-19)
+------------------
+
+* The initial release.
 
